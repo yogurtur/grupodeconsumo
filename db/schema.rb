@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140309101533) do
+ActiveRecord::Schema.define(:version => 20140316232103) do
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "order_id"
+    t.integer  "quantity"
+    t.float    "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "line_items", ["order_id"], :name => "index_line_items_on_order_id"
+  add_index "line_items", ["product_id"], :name => "index_line_items_on_product_id"
+
+  create_table "orders", :force => true do |t|
+    t.text     "ordar_status"
+    t.text     "payment_method"
+    t.string   "shipping_address"
+    t.text     "shipping_city"
+    t.text     "customer_name"
+    t.text     "customer_lastname"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "products", :force => true do |t|
     t.string   "name"
@@ -19,8 +42,9 @@ ActiveRecord::Schema.define(:version => 20140309101533) do
     t.datetime "admission_at"
     t.text     "manufacturer"
     t.integer  "quantity"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "product_category"
   end
 
 end

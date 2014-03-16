@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ordar_status: MyText
+  payment_method: MyText
+  shipping_address: MyString
+  shipping_city: MyText
+  customer_name: MyText
+  customer_lastname: MyText
+
+two:
+  ordar_status: MyText
+  payment_method: MyText
+  shipping_address: MyString
+  shipping_city: MyText
+  customer_name: MyText
+  customer_lastname: MyText
